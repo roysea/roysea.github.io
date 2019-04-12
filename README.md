@@ -1,5 +1,5 @@
 # C++ STL Study Guide
-This guide is a quick review of c++ container classes: Set, Map, Vector, List, ...
+This guide is a quick review of c++ container classes: Set, Map, Vector, List, ...<br/>
  click here to see the site https://roysea.github.io/
 
 
