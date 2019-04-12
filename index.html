@@ -1,73 +1,56 @@
-<HTML>
-<HEAD>
-    <META NAME="GENERATOR" Content="Microsoft Visual Studio">
-    <TITLE>C++ STL Study Guide</TITLE>
-</HEAD>
-<BODY>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Roya Salei">
+    <TITLE>C++ STL Study Guide by Roysea</TITLE>
 
-    <style type="text/css">
-        code {
-            background-color: #EEEEEE;
-            font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
-        }
-        table.tz-table {
-            font-size: 12px;
-            border: 1px solid #CCC;
-            font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
-        }
+    <!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/guide.css" rel="stylesheet">
 
-        .tz-table td {
-            padding: 4px;
-            margin: 3px;
-            border: 1px solid #CCC;
-        }
+  </head>
+  <body class="py-4">
+    <div class="container">
 
-        .tz-table th {
-            background-color: #104E8B;
-            color: #FFF;
-            font-weight: bold;
-        }
-    </style>
-    <table class="tz-table">
-        <thead><tr class="tz-firstrow"><th></th><th>Container Type</th><th>Set</th><th>Map</th></tr></thead>
-        <tbody>
-            <tr><td>&nbsp;</td><td>Iterator Type</td><td>Bidirectional Iterator</td><td>Bidirectional Iterator</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>Member Function Examples</td><td>Member Function Examples</td></tr>
-            <tr><td>constructors</td><td>default constructor</td><td>set<int> aSet;</td><td>map<int, string> aMap;</td></tr>
-            <tr><td>&nbsp;</td><td>copy constructor</td><td>set<int> bSet(aSet);</td><td>map<int, string> bMap(aMap);</td></tr>
-            <tr><td>&nbsp;</td><td>range constructor</td><td>set<int> cSet(aSet.begin(), aSet.end());</td><td>map<int, string> cMap(aMap.begin(), aMap.end());</td></tr>
-            <tr><td>&nbsp;</td><td>initializer list constructor</td><td>set<int> dSet = {1,2,3};</td><td>map<int, string> dMap = {{1,"dog"},{2,"cat"},{3,"bird"}};</td></tr>
-            <tr><td>&nbsp;</td><td>1- fill constructor</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>2- fill constructor</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>Assignment Operator</td><td>1- operator = </td><td>aSet = bSet;</td><td>aMap = bMap;</td></tr>
-            <tr><td>&nbsp;</td><td>2- operator = </td><td>bSet = set<int>();</td><td>bMap = map<int, string>();   // empty bMap</td></tr>
-            <tr><td>&nbsp;</td><td>3- operator = </td><td>bSet = {1234,1,50};  // {1, 50, 1234}</td><td>bMap = {{1,"donkey"}, {2,"lion"}}; </td></tr>
-            <tr><td>Iterators</td><td>begin()</td><td>set<int>::iterator iter = aSet.begin();</td><td>map<int, string>::iterator iter = aMap.begin();</td></tr>
-            <tr><td>&nbsp;</td><td>end()</td><td>set<int>::iterator iterEnd = aSet.end();</td><td>map<int, string>::iterator iterEnd = aMap.end();</td></tr>
-            <tr><td>&nbsp;</td><td>rbegin()</td><td>set<int>::reverse_iterator rIter = aSet.rbegin();</td><td>map<int, string>::reverse_iterator rIter = aMap.rbegin();</td></tr>
-            <tr><td>&nbsp;</td><td>rend()</td><td>set<int>::reverse_iterator rIterEnd = aSet.rend();</td><td>map<int, string>::reverse_iterator rIterEnd = aMap.rend();</td></tr>
-            <tr><td>Capacity</td><td>size()</td><td>int size = static_cast<int>(aSet.size());</td><td>int size = static_cast<int>(aMap.size());</td></tr>
-            <tr><td>&nbsp;</td><td>empty()</td><td>bool result = aSet.empty();</td><td>bool result = aMap.empty();</td></tr>
-            <tr><td>&nbsp;</td><td>1- resize()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>2- resize()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>reserve()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>capacity()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>Element Access</td><td>front()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>back()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>operator[]</td><td>&nbsp;</td><td>cout << dMap[5];   //{{1,"Bear"},{2,"cat"},{3,"bird"}, {5,""}}</td></tr>
-            <tr><td>&nbsp;</td><td>at()</td><td>&nbsp;</td><td>dMap.at(1) = "Bear";     //{{1,"Bear"},{2,"cat"},{3,"bird"}}</td></tr>
-            <tr><td>modifiers</td><td>push_back()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>pop_back()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>push_front()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>pop_front()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>insert()</td><td>pair<std::set<int>::iterator,bool> ret;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>erase()</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td></td></tr>
-        </tbody>
-    </table>
-</BODY>
-</HTML>
+  <h1>Study Guide for C++ STL Data Structures <span class="lead"> by Example</span></h1>
+    <p>In the following examples I have used integer data type for set examples and pair of (int, string) for map examples.</p>
+    <p>I will keep adding more member functions. If you like, feel free to collaborate through github.</p>
+    <div class="col-12 bg-primary mb-0"><div class="h2 mb-0 p-4 text-center text-white">Container Type</div>  </div>
+  <table class="tz-table table table-hover">
+          <thead><tr class="tz-firstrow h4 p-2"><th>&nbsp;</th><th>&nbsp;</th><th class="text-center">Set</th><th class="text-center">Map</th></tr></thead>
+      <tbody>
+          <tr class="bg-warning"><td>&nbsp;</td><td>Iterator Type</td><td>Bidirectional Iterator</td><td>Bidirectional Iterator</td></tr>
+          <tr class="bg-light divider"><td>&nbsp;</td><td>&nbsp;</td><td>Member Function Examples</td><td>Member Function Examples</td></tr>
+          <tr><td class="gb1 text-white lead" >constructors</td><td  class="gb1 text-white">default constructor</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt; aSet;</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;aMap;</td></tr>
+          <tr><td class="gb1 text-white" >&nbsp;</td ><td class="gb1 text-white">copy constructor</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt; bSet(aSet);</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;bMap(aMap);</td></tr>
+          <tr><td class="gb1 text-white" >&nbsp;</td ><td class="gb1 text-white">range constructor</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt; cSet(aSet.begin(), aSet.end());</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;cMap(aMap.begin(), aMap.end());</td></tr>
+          <tr><td class="gb1 text-white" >&nbsp;</td ><td class="gb1 text-white">initializer list constructor</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt; dSet = {1,2,3};</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;dMap = {{1,"dog"},{2,"cat"},{3,"bird"}};</td></tr>
+          <tr><td class="gb1 text-white" >&nbsp;</td ><td class="gb1 text-white">1- fill constructor</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr class="divider"><td class="gb1 text-white" >&nbsp;</td ><td class="gb1 text-white">2- fill constructor</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr><td class="gb2 text-white">Assignment Operator</td><td class="gb2 text-white">1- operator = </td><td>aSet = bSet;</td><td>aMap = bMap;</td></tr>
+          <tr><td class="gb2 text-white">&nbsp;</td><td class="gb2 text-white">2- operator = </td><td>bSet = <code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt;();</td><td>bMap = <code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;();   <code class="text-secondary">//empty bMap </code></td></tr>
+          <tr class="divider"><td class="gb2 text-white">&nbsp;</td><td class="gb2 text-white">3- operator = </td><td>bSet = {1234,1,50}; <br><code class="text-secondary"> // {1, 50, 1234} </code></td><td>bMap = {{1,"donkey"}, {2,"lion"}}; </td></tr>
+          <tr><td class="gb3">Iterators</td><td class="gb3">begin()</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt;<code class="text-primary">::</code>iterator iter = aSet.begin();</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;<code class="text-primary">::</code>iterator iter = aMap.begin();</td></tr>
+          <tr><td class="gb3">&nbsp;</td><td class="gb3">end()</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt;<code class="text-primary">::</code>iterator iterEnd = aSet.end();</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;<code class="text-primary">::</code>iterator iterEnd = aMap.end();</td></tr>
+          <tr><td class="gb3">&nbsp;</td><td class="gb3">rbegin()</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt;<code class="text-primary">::</code>reverse_iterator rIter = aSet.rbegin();</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;<code class="text-primary">::</code>reverse_iterator rIter = aMap.rbegin();</td></tr>
+          <tr class="divider"><td class="gb3">&nbsp;</td><td class="gb3">rend()</td><td><code class="text-primary">set</code>&lt;<code class="text-danger">int</code>&gt;<code class="text-primary">::</code>reverse_iterator rIterEnd = aSet.rend();</td><td><code class="text-primary">map</code>&lt;<code class="text-danger">int, string</code>&gt;<code class="text-primary">::</code>reverse_iterator rIterEnd = aMap.rend();</td></tr>
+          <tr><td class="gb4">Capacity</td><td class="gb4">size()</td><td><code class="text-danger">int </code>size = static_cast<code class="text-danger">&lt;int&gt;</code>(aSet.size());</td><td><code class="text-danger">int </code>size = static_cast<code class="text-danger">&lt;int&gt;</code>(aMap.size());</td></tr>
+          <tr><td class="gb4">&nbsp;</td><td class="gb4">empty()</td><td><code class="text-primary">bool</code> result = aSet.empty();</td><td><code class="text-primary">bool</code> result = aMap.empty();</td></tr>
+          <tr><td class="gb4">&nbsp;</td><td class="gb4">1- resize()</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr><td class="gb4">&nbsp;</td><td class="gb4">2- resize()</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr><td class="gb4">&nbsp;</td><td class="gb4">reserve()</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr class="divider"><td class="gb4">&nbsp;</td><td class="gb4">capacity()</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr><td class="gb6">Element Access</td><td class="gb6">front()</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr><td class="gb6">&nbsp;</td><td class="gb6">back()</td><td class="bg-secondary">&nbsp;</td><td class="bg-secondary">&nbsp;</td></tr>
+          <tr><td class="gb6">&nbsp;</td><td class="gb6">operator[]</td><td class="bg-secondary">&nbsp;</td><td>cout << dMap[5];<br>   <code class="text-secondary"> //{{1,"dog"},{2,"cat"},{3,"bird"},{5,""}}; </code></td></tr>
+          <tr class="divider"><td class="gb6">&nbsp;</td><td class="gb6">at()</td><td class="bg-secondary">&nbsp;</td><td>dMap.at(1) = "Bear";<br><code class="text-secondary"> //{{1,"Bear"},{2,"cat"},{3,"bird"}}</code></td></tr>
 
+      </tbody>
+  </table>
+  <p>Source: cplusplus.com and my CS A250 class at OCC.</p>
+<p class="text-right"> April 2019</p>
+</div> <!-- /container -->
+</body></html>
